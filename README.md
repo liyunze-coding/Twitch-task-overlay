@@ -43,7 +43,7 @@ Allows streamer and twitch chat to display their tasks on the overlay.
 5. Create your application.
 6. Obtain the `Client ID` from the application
 7. Put the Client ID into the [get token link](./references/get_token.txt)
-8. Use
+8. Paste the link into your browser
 9. In the URL, obtain the `access_token`
 10. Paste the `access_token` into [index.js](./scripts/index.js)
 11. [Finish setup](#obs-setup)
