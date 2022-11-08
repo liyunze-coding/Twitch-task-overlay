@@ -15,6 +15,8 @@ Allows streamer and twitch chat to display their tasks on the overlay.
 
 ## How to setup?
 
+-    [VIDEO](https://youtu.be/Gf53pxJkJd0)
+
 -    [Installation](#installation)
 -    [Twitch application](#twitch-application)
 -    [OBS setup](#obs-setup)
