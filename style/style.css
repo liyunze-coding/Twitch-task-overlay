@@ -1,3 +1,11 @@
+:root{
+    --title-font-size:30px;
+    --task-list-font-size:23px;
+
+    --task-list-width:400px;
+    --task-list-height:400px;
+}
+
 * {
     margin:0;
     padding:0;
@@ -11,7 +19,7 @@ body {
 #tasks-list-div {
     margin-left:10px;
     margin-top:10px;
-    width:300px;
+    width:var(--task-list-width);
     background-color:rgba(0,0,0,0.9);
     color:white;
 
@@ -20,17 +28,17 @@ body {
 
 #counters {
     font-family:'Courier New', Courier, monospace;
-    font-size:30px;
+    font-size:var(--title-font-size);
 }
 
 #task-list{
     font-family:Arial, Helvetica, sans-serif;
-    font-size:25px;
+    font-size:var(--task-list-font-size);
     list-style-type:none;
 }
 
 .inner-container {
-    height:200px;
+    height:var(--task-list-height);
     
     /* for auto-scrolling to work */
     position:relative;
