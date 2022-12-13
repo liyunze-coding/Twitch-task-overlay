@@ -167,11 +167,17 @@ function updateTasks() {
         }
 
         if (tasks[t].done){
-            list += `<li><strike><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}</strike></li>`;
+            list += `<label class="check-container"><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+            </label>`
             no_of_tasks_completed++;
 
         } else {
-            list += `<li><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}</li>`;
+            list += `<label class="check-container"><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>`;
         }
         no_of_tasks++;
     }

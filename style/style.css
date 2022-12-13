@@ -17,13 +17,13 @@ body {
 }
 
 #tasks-list-div {
-    margin-left:10px;
-    margin-top:10px;
     width:var(--task-list-width);
     background-color:rgba(0,0,0,0.9);
     color:white;
 
     border:solid 1px white;
+
+    padding:10px;
 }
 
 #counters {
@@ -50,4 +50,59 @@ body {
 
     /* for auto-scrolling to work */
     overflow:hidden;
+}
+
+.check-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    
+    margin-top: 15px;
+    /* cursor: pointer; */
+    font-size: 23px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border:solid 2px white;
+    border-radius:5px;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.check-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.check-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
