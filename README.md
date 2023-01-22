@@ -33,7 +33,13 @@ Allows streamer and twitch chat to display their tasks on the overlay.
 
 ---
 
-### Twitch Application
+### Twitch Application method 1
+
+1. Go to [tmi app token generator](https://twitchapps.com/tmi)
+2. Select "Connect"
+3. Obtain oauth token
+
+### Twitch Application method 2
 
 1. Go to [Twitch Developers](https://dev.twitch.tv) and create a twitch application
 2. Enter `Name`

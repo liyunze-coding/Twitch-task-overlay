@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&family=Questrial&family=Quicksand:wght@400;500;600;700&family=Sniglet&display=swap');
+
 :root{
-    --title-font-size:30px;
+    --title-font-size:25px;
     --task-list-font-size:23px;
 
-    --checkbox-size: 20px;
+    --checkbox-size: 18px;
 
-    --task-list-width:400px;
+    --task-list-width:500px;
     --task-list-height:400px;
+
+    --header-bg-color:rgba(0,0,0,0.9);
+    --task-bg-color:rgba(0,0,0,0.7);
+    --check-box-bg-color:rgba(0,0,0,0.8);
 }
 
 * {
@@ -22,27 +28,36 @@ body {
 
 #tasks-list-div {
     width:var(--task-list-width);
-    background-color:rgba(0,0,0,0.9);
+    background-color:rgba(0,0,0,0);
     color:white;
 
-    border:solid 1px white;
+    /* border:solid 1px white; */
 
-    padding:10px;
+    border-radius:10px;
 }
 
 #counters {
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Fredoka One', sans-serif;
     font-size:var(--title-font-size);
+
+    background-color:var(--header-bg-color);
+
+    border-radius:7px;
+
+    padding: 10px;
 }
 
 #task-list{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size:var(--task-list-font-size);
     list-style-type:none;
+    
+    padding:10px;
 }
 
 .inner-container {
     height:var(--task-list-height);
+    
     
     /* for auto-scrolling to work */
     position:relative;
@@ -50,18 +65,22 @@ body {
 }
 
 .outer-container {
-    border-top:solid 1px white;
-
+    z-index:-1;
     /* for auto-scrolling to work */
-    overflow:hidden;
+
+    overflow-y:hidden;
 }
 
 .check-container {
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding: 5px 5px 5px 35px;
+
+    background-color: var(--task-bg-color);
+
+    border-radius:5px;
     
-    margin-top: 15px;
+    margin-bottom: 12px;
     /* cursor: pointer; */
     font-size: 23px;
     -webkit-user-select: none;
@@ -80,11 +99,13 @@ body {
 
 .checkmark {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    transform:translateY(-50%);
+
+    left: 1%;
     height: var(--checkbox-size);
     width: var(--checkbox-size);
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--check-box-bg-color);
     border:solid 2px white;
     border-radius:5px;
 }
@@ -101,7 +122,7 @@ body {
 
 .check-container .checkmark:after {
     left: 35%;
-    top: 10%;
+    top: 15%;
     width: calc(var(--checkbox-size) / 5);
     height: calc(var(--checkbox-size) / 2);
     border: solid white;
@@ -109,4 +130,8 @@ body {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.username {
+    font-weight:bolder;
 }

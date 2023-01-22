@@ -111,20 +111,8 @@ ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
             ComfyJS.Say(`${user} has removed their previous task`);
         }
     }
-    
-    else if (command === 'clear'){
-        if (!flags.broadcaster){
-            return ComfyJS.Say(`@${user} only the streamer can use this command!`);
-        }
 
-        localStorage.setItem(`tasks`, '{}');
-        localStorage.setItem(`userData`, '{}');
-        updateTasks();
-
-        return ComfyJS.Say(`@${user} Cleared tasks!`);
-    } 
-    
-    else if (command === 'cleardone'){
+    else if (command === 'cleardone' || (command === 'clear' && message === 'done')){
         if (!flags.broadcaster){
             return ComfyJS.Say(`@${user} only the streamer can use this command!`);
         }
@@ -138,6 +126,18 @@ ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
         updateTasks();
         return ComfyJS.Say(`@${user} cleared done!`);
     }
+    
+    else if (command === 'clear'){
+        if (!flags.broadcaster){
+            return ComfyJS.Say(`@${user} only the streamer can use this command!`);
+        }
+
+        localStorage.setItem(`tasks`, '{}');
+        localStorage.setItem(`userData`, '{}');
+        updateTasks();
+
+        return ComfyJS.Say(`@${user} Cleared tasks!`);
+    } 
 
     else if (commands[command]) {
         let reply = commands[command];
@@ -162,22 +162,22 @@ function updateTasks() {
     for (t of Object.keys(tasks)){
         task_name = tasks[t].task;
 
-        if (task_name.length + tasks[t].username.length > 45){
-            task_name = task_name.slice(0,45) + '...';
+        if (task_name.length + tasks[t].username.length > 50){
+            task_name = task_name.slice(0,50) + '...';
         }
 
         if (tasks[t].done){
-            list += `<label class="check-container"><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}
+            list += `<div class="check-container"><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}
             <input type="checkbox" checked="checked">
             <span class="checkmark"></span>
-            </label>`
+            </div>`
             no_of_tasks_completed++;
 
         } else {
-            list += `<label class="check-container"><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}
+            list += `<div class="check-container"><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}
             <input type="checkbox">
             <span class="checkmark"></span>
-          </label>`;
+          </div>`;
         }
         no_of_tasks++;
     }
