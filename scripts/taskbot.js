@@ -160,6 +160,9 @@ function updateTasks() {
     let no_of_tasks = 0;
 
     for (t of Object.keys(tasks)){
+        if (t.substr(t.length-5) === 'count') continue;
+        if (t.substr(t.length-12) === 'pending_task') continue;
+
         task_name = tasks[t].task;
 
         if (task_name.length + tasks[t].username.length > 50){
@@ -167,14 +170,14 @@ function updateTasks() {
         }
 
         if (tasks[t].done){
-            list += `<div class="check-container"><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}
+            list += `<div class="check-container"><span class="username">${tasks[t].username}</span> : ${task_name}
             <input type="checkbox" checked="checked">
             <span class="checkmark"></span>
             </div>`
             no_of_tasks_completed++;
 
         } else {
-            list += `<div class="check-container"><span class="username" style="color:${tasks[t].userColor};">${tasks[t].username}</span> : ${task_name}
+            list += `<div class="check-container"><span class="username">${tasks[t].username}</span> : ${task_name}
             <input type="checkbox">
             <span class="checkmark"></span>
           </div>`;
