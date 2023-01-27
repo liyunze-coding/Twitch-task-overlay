@@ -1,4 +1,4 @@
-const taskList = document.querySelector("#task-list");
+const taskList = document.querySelector("#task-list-body");
 const taskCounter = document.querySelector("#counters");
 const completed_task_count = document.querySelector("#completed-task-count");
 const task_count = document.querySelector("#task-count");
@@ -170,17 +170,21 @@ function updateTasks() {
         }
 
         if (tasks[t].done){
-            list += `<div class="check-container"><span class="username">${tasks[t].username}</span> : ${task_name}
+            list += `<div class="task-container">
             <input type="checkbox" checked="checked">
             <span class="checkmark"></span>
-            </div>`
+            <span class="username">${tasks[t].username}</span> : 
+            ${task_name}
+            </div>`;
             no_of_tasks_completed++;
 
         } else {
-            list += `<div class="check-container"><span class="username">${tasks[t].username}</span> : ${task_name}
+            list += `<div class="task-container">
             <input type="checkbox">
             <span class="checkmark"></span>
-          </div>`;
+            <span class="username">${tasks[t].username}</span> : 
+            ${task_name}
+            </div>`;
         }
         no_of_tasks++;
     }
