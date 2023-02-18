@@ -8,7 +8,7 @@
     --checkbox-top-distance: 0;
 
     --task-list-width:500px;
-    --task-list-height:400px;
+    --task-list-height:150px;
 
     --task-list-bg-color:rgba(0,0,0,0);
     --header-bg-color:rgba(0,0,0,0.9);
@@ -55,7 +55,7 @@ body {
     font-size:var(--task-list-font-size);
     list-style-type:none;
     
-    padding:10px;
+    padding:10px 10px 10px 10px;
 }
 
 .task-name {
@@ -87,14 +87,16 @@ body {
     background: var(--task-bg-color);
 
     border-radius:5px;
-    
-    margin-bottom: 12px;
+
     /* cursor: pointer; */
-    font-size: 23px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.task-container:not(:last-child){
+    margin-bottom: 12px;
 }
 
 .task-container input {
