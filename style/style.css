@@ -80,15 +80,23 @@ body {
 
 /* container for each task */
 .task-container {
-    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
     position: relative;
     padding: 5px 5px 5px 35px;
+
+    overflow-x:hidden;
+    text-overflow: ellipsis;
 
     background: var(--task-bg-color);
 
     border-radius:5px;
+    
+    margin-bottom: 12px;
 
-    /* cursor: pointer; */
+    font-size: 23px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

@@ -165,10 +165,6 @@ function updateTasks() {
 
         task_name = tasks[t].task;
 
-        if (task_name.length + tasks[t].username.length > 50){
-            task_name = task_name.slice(0,50) + '...';
-        }
-
         if (tasks[t].done){
             list += `<div class="task-container">
             <input type="checkbox" checked="checked">
