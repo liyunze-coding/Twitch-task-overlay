@@ -58,11 +58,6 @@ body {
     padding:10px 10px 10px 10px;
 }
 
-.task-name {
-    margin-left:5px;
-    /* width:90%; */
-}
-
 .inner-container {
     height:var(--task-list-height);
     
@@ -83,7 +78,6 @@ body {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-
     position: relative;
     padding: 5px 5px 5px 35px;
 
@@ -96,7 +90,6 @@ body {
     
     margin-bottom: 12px;
 
-    font-size: 23px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
