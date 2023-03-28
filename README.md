@@ -1,5 +1,7 @@
 # Twitch Task List overlay
 
+I RELEASED A NEW TASK LIST, CHECK THAT ONE OUT INSTEAD [HERE](https://github.com/liyunze-coding/Chat-Task-Tic-Overlay)
+
 A simple task list overlay for co-working streamers on Twitch!
 Allows streamer and twitch chat to display their tasks on the overlay.
 
